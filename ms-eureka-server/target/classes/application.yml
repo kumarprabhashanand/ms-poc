@@ -1,0 +1,24 @@
+server:
+  address: 0.0.0.0
+  port: 9091
+  error:
+    whitelabel:
+      enabled: false
+  
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://0.0.0.0:9091/eureka
+  instance:
+    prefer-ip-address: true
+
+management:
+  endpoint:
+    health:
+      enabled: true
+    restart:
+      enabled: true
+    shutdown:
+      enabled: true
