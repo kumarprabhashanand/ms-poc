@@ -1,0 +1,57 @@
+spring:
+  application:
+    name: zuul-service
+    
+server:
+  address: 0.0.0.0
+  port: 8084
+  error:
+    whitelabel:
+      enabled: false
+
+management:
+  endpoint:
+    health:
+      enabled: true
+    restart:
+      enabled: true
+    shutdown:
+      enabled: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URI:http://10.10.11.70:9091/eureka}
+  instance:
+    ip-address: true
+
+zuul:
+  routes:
+    users:
+      path: /users/**
+      serviceId: user-service
+      stripPrefix: true
+    orders:
+      path: /orders/**
+      serviceId: order-service
+      stripPrefix: true
+    items:
+      path: /items/**
+      serviceId: item-service
+      stripPrefix: true
+    inventories:
+      path: /inventories/**
+      serviceId: inventory-service
+      stripPrefix: true
+  host:
+    connect-timeout-millis: 30000
+    socket-timeout-millis: 30000
+  retryable: true
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 30000
