@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: user-service
+  jpa:
+    hibernate:
+      ddl-auto: none
+  datasource:
+    url: jdbc:mysql://10.10.11.70:3306/ms_poc
+    username: root
+    password: password
+
+server:
+  address: 0.0.0.0
+  port: 7071
+  error:
+    whitelabel:
+      enabled: false
+
+management:
+  endpoint:
+    health:
+      enabled: true
+    restart:
+      enabled: true
+    shutdown:
+      enabled: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URI:http://10.10.11.70:9091/eureka}
+  instance:
+    ip-address: true
