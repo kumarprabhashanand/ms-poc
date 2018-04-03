@@ -27,3 +27,6 @@ You can run any of item, user, or order service independently. Given that Eureka
 For more information, Kindly check "Microservices-deployment" file.
 
 For detailed information on Docker deployment kindly check "Microservices-Docker" file.
+
+#
+Please refer "Angular-Working" directory for updated UI code.
