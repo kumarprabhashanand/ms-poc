@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 //Eureka Server Service
 //master branch - merged
+//new comment
 @SpringBootApplication
 @EnableEurekaServer
 public class EurekaServerApplication {
